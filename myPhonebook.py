@@ -20,10 +20,12 @@ conn = mysql.connector.connect(
 cur = conn.cursor()
 activeTab={"home":"","addEntries":"","updateEntry":""}
 
+#Ensure filetypes are OK. Added .lower() so uppercase exts will pass
 def allowed_file(filename):
     return '.' in filename and \
            filename.lower().rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
 
+#Grab all db entries, cast tuples to a list, then for each, check if photo_ext is anything. If so, concatenate the id, '.', and ext to generate image filename and store it as such in the new list 'l'. If no valid value, use placeholder.jpg instead for the filename.
 @app.route("/")
 def listings():
     query = ("SELECT id,name,email,phone,photo_ext FROM phonebook")
@@ -68,6 +70,8 @@ def new_entry():
     setActiveTab("addEntries")
     return render_template("new_entry.html", title="My Phonebook",activeTab=activeTab)
 
+#check if this page is being reached from a POST. If not, ignore functions. Otherwise check filename is safe, grab the ext of the image file for storage in the db and insert new entry.
+#After entry is stored, get the new id from db and use it plus '.' plus ext to save the image to the server.
 @app.route("/submit_new_entry", methods=['POST'])
 def submit_new_student():
     setActiveTab("addEntries")
@@ -92,6 +96,7 @@ def submit_new_student():
     # return render_template("submit_new_entry.html", name=name,email=email,phone=phone, activeTab=activeTab)
     return redirect("/")
 
+#Need to add ability to update images. Have to move on for now. To do: Extract image upload with overwrite to an outsidefunction either new_contact or update_contact can make use of.
 @app.route("/submit_update_contact", methods=['POST'])
 def submit_update_contact():
     id = request.form.get('id')
