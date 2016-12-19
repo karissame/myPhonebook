@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block maincontent %}
+<h1>Add a New Contact</h1>
+<form action="/submit_new_entry" method="POST" enctype="multipart/form-data">
+  <p>
+    <label for="name">Name</label><br>
+    <input type="text" name="name">
+  </p>
+  <p>
+    <label for="email">Email</label><br>
+    <input type="text" size="60" name="email">
+  </p>
+  <p>
+    <label for="phone">Phone Number</label><br>
+    <input type="text" size="60" name="phone">
+  </p>
+  <p>
+    <label for="file">Picture</label><br>
+    <input type="file" name="file">
+  </p>
+  <p>
+    <button class = "btn" type="submit" value="upload">Add Contact</button>
+  </p>
+</form>
+{% endblock %}

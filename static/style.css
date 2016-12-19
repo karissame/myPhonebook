@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: Arial;
+}
+
+body {
+    background-image: url('https://www.walldevil.com/wallpapers/a16/resolution-gradient-photo-wallpapers-desktop.jpg');
+    background-repeat:
+}
+
+.nav {
+    width: 100%;
+    /*height: 40px;*/
+    top: 0;
+    background-color: #6b9ae5;
+    display: inline-block;
+}
+.nav a{
+    padding-right: 20px;
+    font-weight: bolder;
+    color: white;
+    display: inline-block;
+    padding: 15px;
+    float: right;
+}
+.nav li{
+    margin-right: 20px;
+    font-weight: bolder;
+    color: white;
+    display: inline-block;
+    float: right;
+}
+.active {
+    background-color: #7c4a99;
+}
+.contact_section {
+    background-color: #6b9ae5;
+    margin-right: 10%;
+    margin-top: 10%;
+    width: 80%;
+    align-items: center;
+}
+.contact_section li{
+    font-weight: bolder;
+    font-size: 18px;
+    list-style-type: none;
+
+}
+.contact_section a{
+    color: #7c4a99;
+}
+.btn {
+    background-color: #dadfe8;
+    position:relative;
+    margin-top: 15px;
+    display: inline-block;
+
+}
+.img_div {
+    display: inline-block;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    overflow: hidden;
+    position: relative;
+    float: right;
+    margin-right: 15px;
+
+}
+.profile_pic {
+    height: 100%;
+    width: auto;
+    margin: 0 auto;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+.vertical-align {
+    vertical-align: middle;
+    display: table;
+    width: 100%;
+}

@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block maincontent %}
+<h1>Current Contacts</h1>
+<ul>
+  {% for id,name,email,phone,filename in contact_list %}
+  <li>{{id}}. {{name}} - <a href="mailto:?email={{email}}">{{email}}</a> - {{phone}}</li>
+  <span class="vertical-align">
+  <a class="btn" href="/update_entry?id={{id}}" role=button>Update {{name}}</a>
+  <div class="img_div">
+<img class="profile_pic" src="/static/profilepics/{{filename}}">
+  </div></span>
+  <br />
+  <br />
+  {% endfor %}
+</ul>
+{% endblock %}

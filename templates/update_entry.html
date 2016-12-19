@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block maincontent %}
+<h1>Update Contact {{ phonebook.name }}</h1>
+<form action="/submit_update_contact" method="POST">
+  <input type="hidden" name="id" value="{{phonebook[0]}}">
+  <p>
+    <label for="name">Name</label><br>
+    <input type="text" name="name" value="{{phonebook[1]}}">
+  </p>
+  <p>
+    <label for="email">Email</label><br>
+    <input type="text" size="60" name="email" value="{{phonebook[2]}}">
+  </p>
+  <p>
+    <label for="phone">Phone</label><br>
+    <input type="text" size="60" name="phone" value="{{phonebook[3]}}">
+  </p>
+  <p>
+    <label for="file">Picture</label><br>
+    <input type="file" name="file">
+  </p>
+    <button type="submit" name="submit" value="update">Update Contact</button>
+    <button type="submit" name="submit" value="delete">DELETE Contact</button>
+    <br  /><br  />
+
+</form>
+{% endblock %}

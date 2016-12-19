@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{{title}}</title>
+        <link rel="stylesheet" type="text/css" href="static/style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    </head>
+    <body>
+        {% block headernav %}
+        <ul class="nav">
+            <li class="{{activeTab["updateEntry"]}}"><a href="/update_entry">Update Entries</a></li>
+            <li class="{{activeTab["addEntries"]}}"><a href="/new_entry">Add Entries</a></li>
+            <li class="{{activeTab["home"]}}"><a href="/">Home</a></li>
+        </ul>
+        {% endblock %}
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 contact_section">
+        {% block maincontent %}
+        {% endblock %}
+                </div>
+            </div>
+        </div>
+        {% block footer %}
+        {% endblock %}
+    </body>
+</html>
